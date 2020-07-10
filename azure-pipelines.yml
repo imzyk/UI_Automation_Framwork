@@ -25,11 +25,11 @@ steps:
   displayName: Build
   inputs:
     command: build
-    projects: 'UI_Automation_Framwork/Demo_SpecflowPOM/POMPOCSpecflow/*.csproj'
+    projects: '**/*.csproj'
     arguments: '--configuration Debug'
 
 - task: DotNetCoreCLI@2
   inputs:
     command: test
-    projects: 'UI_Automation_Framwork/Demo_SpecflowPOM/POMPOCSpecflow/*.csproj'
+    projects: '**/*.csproj'
     arguments: '--configuration Debug'
