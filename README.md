@@ -1,4 +1,4 @@
-# UIAPI_Automation_Framwork
+# UI_Automation_Framwork
 List several UI automation framework ever got involved
 
 Demo_CypressBDD -- Cypress/JS based, BDD driven and non-POM model
