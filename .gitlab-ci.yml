@@ -1,0 +1,26 @@
+stages:
+  - test
+
+.specflow_test:
+  stage: test
+  image: mcr.microsoft.com/dotnet/core/sdk:2.2-bionic
+  timeout: 15 minutes
+  before_script:
+    - dotnet tool install --global trx2junit --version 1.2.5
+    - dotnet build ./Demo_SpecflowPOM/POMPOCSpecflow/POMPOCSpecflow.csproj -c Debug
+  script:
+    - dotnet test ./Demo_SpecflowPOM/POMPOCSpecflow -c Debug --logger:trx; done
+  after_script:
+    - cd ./Demo_SpecflowPOM/POMPOCSpecflow
+    - mkdir TestResultsTRX
+    - mkdir TestResultsXML
+    - cd TestResults
+    - ~/.dotnet/tools/trx2junit *.trx
+    - cp *.trx ../TestResultsTRX
+    - cp *.xml ../TestResultsXML
+    - cd ../../../
+  artifacts:
+    when: always
+    reports:
+      junit:
+        - './Demo_SpecflowPOM/POMPOCSpecflow/TestResultsXML/*.xml'
