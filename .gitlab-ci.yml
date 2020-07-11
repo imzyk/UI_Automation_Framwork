@@ -3,7 +3,7 @@ stages:
 
 specflow_test:
   stage: test
-  image: mcr.microsoft.com/dotnet/core/sdk:2.2-nanoserver-2004
+  image: mcr.microsoft.com/dotnet/core/sdk:3.1-nanoserver-2004
   timeout: 15 minutes
   variables:
     project_path: "./Demo_SpecflowPOM/POMPOCSpecflow/POMPOCSpecflow.csproj"      
