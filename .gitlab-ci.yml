@@ -5,11 +5,14 @@ specflow_test:
   stage: test
   image: mcr.microsoft.com/dotnet/core/sdk:2.2-bionic
   timeout: 15 minutes
+  variables:
+    project_path: "./Demo_SpecflowPOM/POMPOCSpecflow/POMPOCSpecflow.csproj"      
   before_script:
     - dotnet tool install --global trx2junit --version 1.2.5
-    - dotnet build ./Demo_SpecflowPOM/POMPOCSpecflow/POMPOCSpecflow.csproj -c Debug
+    - dotnet restore ${project_path}
+    - dotnet build ${project_path} -c Debug
   script:
-    - dotnet test ./Demo_SpecflowPOM/POMPOCSpecflow/POMPOCSpecflow.csproj -c Debug --logger:trx
+    - dotnet test ${project_path} -c Debug --logger:trx
   after_script:
     - cd ./Demo_SpecflowPOM/POMPOCSpecflow
     - mkdir TestResultsTRX
