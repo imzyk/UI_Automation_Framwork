@@ -1,3 +1,4 @@
+[![Build Status](https://dev.azure.com/peterzhangnz/UIAutomationFramework/_apis/build/status/imzyk.UI_Automation_Framwork?branchName=master)](https://dev.azure.com/peterzhangnz/UIAutomationFramework/_build/latest?definitionId=1&branchName=master)
 # UI_Automation_Framwork
 List several UI automation framework ever got involved
 
