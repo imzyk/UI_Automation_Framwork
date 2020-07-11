@@ -1,8 +1,16 @@
+.shared_windows_runners:
+  tags:
+  - shared-windows
+  - windows
+  - windows-1809
+
 stages:
   - test
 
 specflow_test:
   stage: test
+  extends:
+    - .shared_windows_runners
   image: mcr.microsoft.com/dotnet/core/sdk:2.2-nanoserver-1909
   timeout: 15 minutes
   variables:
