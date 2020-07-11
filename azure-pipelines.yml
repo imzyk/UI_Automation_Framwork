@@ -13,7 +13,7 @@ variables:
   solution: '**/*.sln'
   buildPlatform: 'Any CPU'
   buildConfiguration: 'Release'
-  MSBUILDSINGLELOADCONTEXT: 1
+  MSBUILDSINGLELOADCONTEXT: 1 #Workaround https://github.com/SpecFlowOSS/SpecFlow/issues/1912
 
 steps:
 - task: NuGetToolInstaller@1
@@ -21,6 +21,12 @@ steps:
 - task: NuGetCommand@2
   inputs:
     restoreSolution: '$(solution)'
+    
+- task: UseDotNet@2
+  displayName: 'Install .NET Core SDK'
+  inputs:
+    version: 2.2.0        #netcoreapp2 for this project
+    performMultiLevelLookup: true
 
 - task: DotNetCoreCLI@2
   displayName: Build
