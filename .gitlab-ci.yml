@@ -15,10 +15,12 @@ specflow_test:
   timeout: 15 minutes
   variables:
     project_path: "./Demo_SpecflowPOM/POMPOCSpecflow/POMPOCSpecflow.csproj"      
+    chrome_binary_path: "./Demo_SpecflowPOM/POMPOCSpecflow/chrome_installer.exe"
   before_script:
     - dotnet tool install --global trx2junit --version 1.2.5
-    - dotnet restore ${project_path}
     - dotnet build ${project_path} -c Debug
+    - Invoke-WebRequest "http://dl.google.com/chrome/install/375.126/chrome_installer.exe" -OutFile ${chrome_binary_path}
+    - Start-Process -FilePath ${chrome_binary_path} -Args "/silent /install" -Verb RunAs -Wait
   script:
     - dotnet test ${project_path} -c Debug --logger:trx
   after_script:
