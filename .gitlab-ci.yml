@@ -27,10 +27,11 @@ specflow_test:
     - cd ./Demo_SpecflowPOM/POMPOCSpecflow
     - mkdir TestResultsTRX
     - mkdir TestResultsXML
-    - cd TestResults
-    - ~/.dotnet/tools/trx2junit *.trx
-    - cp *.trx ../TestResultsTRX
-    - cp *.xml ../TestResultsXML
+    - cd ./TestResults
+    - dir
+    - ~/.dotnet/tools/trx2junit ./*.trx
+    - cp ./*.trx ../TestResultsTRX
+    - cp ./*.xml ../TestResultsXML
     - cd ../../../
   artifacts:
     when: always
