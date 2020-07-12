@@ -6,7 +6,7 @@ namespace POMPOCSpecflow.Implementations.PageFunctions
 {
     public sealed class GooglePageFunctions: BasePageFunctions
     {
-        public GooglePageFunctions(ScenarioContext context): base(context)
+        public GooglePageFunctions(ScenarioContext context, IWebDriver driver) : base(context, driver)
         {
         }
 

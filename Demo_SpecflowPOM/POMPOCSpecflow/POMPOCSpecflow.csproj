@@ -54,4 +54,14 @@
     </SpecFlowFeatureFiles>
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Implementations\Support\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="App.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
 </Project>

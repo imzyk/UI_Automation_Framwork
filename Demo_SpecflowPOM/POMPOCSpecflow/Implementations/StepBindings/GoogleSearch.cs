@@ -1,9 +1,7 @@
-﻿using OpenQA.Selenium.Chrome;
-using System.IO;
-using NUnit.Framework;
-using System.Reflection;
+﻿using NUnit.Framework;
 using TechTalk.SpecFlow;
 using POMPOCSpecflow.Implementations.PageFunctions;
+using OpenQA.Selenium;
 
 namespace POMPOCSpecflow.Implementations.StepBindings
 {
@@ -14,11 +12,10 @@ namespace POMPOCSpecflow.Implementations.StepBindings
         private GooglePageFunctions _pageFunctions;
         private GooglePageResultFunctions _pageResultFunctions;
 
-        public GoogleSearch(ScenarioContext context)
+        public GoogleSearch(ScenarioContext context, IWebDriver driver)
         {
-            context.Add("driver", new ChromeDriver(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location)));
-             _pageFunctions = new GooglePageFunctions(context);
-            _pageResultFunctions = new GooglePageResultFunctions(context);
+             _pageFunctions = new GooglePageFunctions(context, driver);
+            _pageResultFunctions = new GooglePageResultFunctions(context, driver);
         }
 
 
