@@ -3,10 +3,10 @@
 [![pipeline status](https://gitlab.com/peter_zhang_henryscheinone/UI_Automation_Framwork/badges/master/pipeline.svg)](https://gitlab.com/peter_zhang_henryscheinone/UI_Automation_Framwork/commits/master)
 
 # UI_Automation_Framwork
-List several UI automation framework ever got involved
+List several UI automation framework ever got involved, together with classic pipeline setup
 
 Demo_CypressBDD -- Cypress/JS based, BDD driven and non-POM model
 
-Demo_SpecflowPOM --C#.Net based, BDD driven and enhanced POM model
+Demo_SpecflowPOM --C#.Net based, BDD driven and enhanced POM model, with pipeline set in both GitLab & Azure DevOps.
 
 Demo_SpringContextTestNG -- Java SpringContextTest Framework, non-BDD driven and traditional POM model
